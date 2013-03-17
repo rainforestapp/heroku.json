@@ -6,10 +6,9 @@ class Heroku::Command::Json < Heroku::Command::Run
   def import
     puts 'Import'
   end
-
   alias_command 'import', 'json:import'
 
-  def export 
+  def export
     puts 'Export'
   end
   alias_command 'export', 'json:export'
