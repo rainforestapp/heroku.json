@@ -27,7 +27,7 @@ class Importer < Struct.new(:api, :app, :json)
 
   def add_config_vars
     Heroku::Helpers.action "Deploying environment configs" do
-      api.post_config_vars(app, json['env'])
+      api.put_config_vars(app, json['env'])
     end
   end
 
