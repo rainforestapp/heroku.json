@@ -44,11 +44,11 @@ describe Exporter do
     it "Exports the environment variables" do
       json = subject.export
 
-      json['env'][:whitelist].keys.should include('RACK_ENV')
-      json['env'][:to_query].keys.should include('RANDOM_VAR')
+      json['env'].keys.should include('RACK_ENV')
+      json['env'].keys.should include('RANDOM_VAR')
 
-      json['env'][:whitelist].keys.should_not include('DATABASE_URL')
-      json['env'][:to_query].keys.should_not include('DATABASE_URL')
+      json['env'].keys.should_not include('DATABASE_URL')
+      json['env'].keys.should_not include('DATABASE_URL')
     end
   end
 end

@@ -13,22 +13,13 @@ class Exporter < Struct.new(:api, :app)
   end
 
   def app_environment_variables
-    env = {
-        whitelist: {},
-        to_query: {},
-    }
+    env = {}
 
     body_or_die(api.get_config_vars(app)).each do |key, value|
       # Skip if it's blacklisted
       next if HerokuJson::ENV_BLACKLIST.include?(key)
 
-      # Put it in the right place for querying later
-      if HerokuJson::ENV_WHITELIST.include?(key)
-        env[:whitelist][key] = value
-      else
-        env[:to_query][key] = value
-      end
-
+      env[key] = value
     end
 
     env
