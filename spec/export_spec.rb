@@ -9,4 +9,14 @@ describe "#export" do
   it "does stuff" do
     command.export
   end
+
+  context "environment variable" do
+
+    it "ignores blacklisted variables"
+
+    it "copies whitelisted variables"
+
+    it "prompts for all non-white/black listed variables"
+
+  end
 end
