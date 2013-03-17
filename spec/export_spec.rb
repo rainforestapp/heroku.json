@@ -7,8 +7,6 @@ describe "#export" do
   let(:command) { Heroku::Command::Json.new }
 
   it "does stuff" do
-    puts client.list
-
     command.export
   end
 end
