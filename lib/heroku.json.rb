@@ -1,5 +1,5 @@
 require "heroku.json/version"
 
-module Heroku.json
+module HerokuJson
   # Your code goes here...
 end

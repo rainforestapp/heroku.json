@@ -5,7 +5,7 @@ require 'heroku.json/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "heroku.json"
-  spec.version       = Heroku.json::VERSION
+  spec.version       = HerokuJson::VERSION
   spec.authors       = ["Russell Smith"]
   spec.email         = ["russell.smith@ukd1.co.uk"]
   spec.description   = %q{TODO: Write a gem description}
