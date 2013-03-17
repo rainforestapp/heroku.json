@@ -9,7 +9,6 @@ require 'json/pure'
 class Heroku::Command::Json < Heroku::Command::Run
 
   def import
-    puts 'Import'
     json = File.read('heroku.json')
     json = JSON.parse(json)
     importer = Importer.new(api, app, json)

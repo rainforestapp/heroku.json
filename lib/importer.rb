@@ -15,12 +15,20 @@ class Importer < Struct.new(:api, :app, :json)
 
   def add_addons
     json['addons'].each do |addon|
-      api.post_addon(app, addon)
+      Heroku::Helpers.action "Installing addon #{addon}" do
+        begin 
+          api.post_addon(app, addon)
+        rescue Heroku::API::Errors::RequestFailed => e
+          Heroku::Helpers.display "Addon #{addon} is already installed"
+        end
+      end
     end
   end
 
   def add_config_vars
-    api.post_config_vars(app, json['env'])
+    Heroku::Helpers.action "Deploying environment configs" do
+      api.post_config_vars(app, json['env'])
+    end
   end
 
   def push_code
