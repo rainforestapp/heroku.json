@@ -20,7 +20,7 @@ class Importer < Struct.new(:api, :app, :json)
   end
 
   def add_config_vars
-    api.post_config_vars(app, json['env'])
+    api.put_config_vars(app, json['env'])
   end
 
   def push_code

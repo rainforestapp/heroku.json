@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Importer do
   let(:app) { 'foo' }
   let(:sample_json) { {'addons' => ['addon1', 'addon2'], 'env' => {'ENV1' => '1', 'ENV2' => 2}} }
-  let(:api) { stub(:post_addon => true, :post_config_vars => true) }
+  let(:api) { stub(:post_addon => true, :put_config_vars => true) }
 
   describe "#import" do
     it "install all addons" do
@@ -17,7 +17,7 @@ describe Importer do
     it "set all environment variables" do
       importer = Importer.new(api, app, sample_json)
 
-      api.should_receive(:post_config_vars).with(app, sample_json['env'])
+      api.should_receive(:put_config_vars).with(app, sample_json['env'])
 
       importer.import
     end
