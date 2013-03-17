@@ -1,10 +1,10 @@
 class Importer < Struct.new(:api, :app, :json)
   def import
-    create_app_if_not_exists
+    # create_app_if_not_exists
     add_addons
     add_config_vars
-    push_code
-    run_custom_commands
+    # push_code
+    # run_custom_commands
   end
 
   private
@@ -14,7 +14,9 @@ class Importer < Struct.new(:api, :app, :json)
   end
 
   def add_addons
-    
+    json['addons'].each do |addon|
+      api.post_addon(app, addon)
+    end    
   end
 
   def add_config_vars

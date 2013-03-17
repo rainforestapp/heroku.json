@@ -1,11 +1,16 @@
 require 'heroku/command/run'
 require 'exporter'
+require 'importer'
 
 # invoke commands without fucking "run"
 class Heroku::Command::Json < Heroku::Command::Run
 
   def import
     puts 'Import'
+    json = File.read('heroku.json')
+    json = JSON.parse(json)
+    importer = Importer.new(api, app, json)
+    importer.import
   end
 
   alias_command 'import', 'json:import'
