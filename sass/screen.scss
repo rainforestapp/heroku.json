@@ -4,6 +4,7 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass";
+@import "compass/reset"; // Reset all stylez
 @import "susy"; // Susy does our grids!
 
 /* Create a sane, standardised baseline */
@@ -44,3 +45,8 @@ $green:     #859900;  // green
     Importz
 ***********************************************/
 @import "main";
+@import "hero";
+
+/* Import webfont */
+@import url('//fonts.googleapis.com/css?family=Ubuntu+Mono');
+@import url('//fonts.googleapis.com/css?family=Cutive+Mono');

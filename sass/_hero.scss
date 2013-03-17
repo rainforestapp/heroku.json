@@ -1,0 +1,26 @@
+header {
+
+    position: relative;
+    top: 50%;
+    margin-top: -5em;
+    text-align: center;
+    @include container;
+
+    /* Main heading */
+    h1 {
+        @include adjust-font-size-to(84px, 1);
+        color: $base2;
+        font-family: 'Cutive Mono', Helvetica, sans-serif;
+        font-weight: bold;
+    }
+
+    h2 {
+        margin-top: 3em;
+        @include span-columns(8,12);
+        @include prefix(2);
+        @include adjust-font-size-to(24px, 1.5);
+        color: $base00;
+        font-weight: bold;
+        position: relative;
+    }
+}
