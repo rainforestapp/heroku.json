@@ -3,6 +3,7 @@
 heroku.json is configuration management for Heroku, making it super simple to setup (import) and copy (export) Heroku apps. The hardest part about hacking on Open Source projects tends to be getting a working version running. heroku.json makes it easy!
 
 __For app creators:__ Include a heroku.json file in your project root to make running your app a one-liner
+
 __For hackers:__ Setup any project with a heroku.json file with a single line of code
 
 TODO: Write a gem description
