@@ -1,6 +1,5 @@
 The MIT License (MIT)
-
-=======================
+===============
 
 Copyright (c) 2013 [smathieu](https://github.com/smathieu), [fredsterss](https://github.com/fredsterss) and [ukd1](https://github.com/ukd1)
 
