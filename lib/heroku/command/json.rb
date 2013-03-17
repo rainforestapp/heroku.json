@@ -10,11 +10,11 @@ class Heroku::Command::Json < Heroku::Command::Run
   alias_command 'import', 'json:import'
 
   def export
-    puts 'Export'
-    puts api.get_apps.body.map {|h| h['name'] }
-    puts api.get_app(app).body
-    puts api.get_addons(app)
+    exporter = Exporter.new(api, app)
+    json = exporter.export
+    File.write('heroku.json', JSON.pretty_generate(json))
   end
+
   alias_command 'export', 'json:export'
 end
 

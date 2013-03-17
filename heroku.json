@@ -1,0 +1,10 @@
+{
+  "addons": [
+    "mongohq:sandbox",
+    "newrelic:standard",
+    "pgbackups:plus",
+    "scheduler:standard",
+    "sendgrid:starter",
+    "heroku-postgresql:dev"
+  ]
+}
