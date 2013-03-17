@@ -10,6 +10,8 @@ class Heroku::Command::Json < Heroku::Command::Run
 
   def export
     puts 'Export'
+    puts api.get_apps.body
+    puts api.get_app(app)
   end
   alias_command 'export', 'json:export'
 end
