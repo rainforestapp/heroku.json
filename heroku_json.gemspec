@@ -6,11 +6,11 @@ require 'heroku.json/version'
 Gem::Specification.new do |spec|
   spec.name          = "heroku.json"
   spec.version       = HerokuJson::VERSION
-  spec.authors       = ["Russell Smith"]
-  spec.email         = ["russell.smith@ukd1.co.uk"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.authors       = ["Russell Smith", "Simon Mathieu", "Fred Stevens-Smith"]
+  spec.email         = ["russ@rainforestqa.com", "simon.math@gmail.com", "fred@rainforestqa.com"]
+  spec.description   = %q{Heroku.json is configuration management for Heroku, making it super simple to setup (import) and copy (export) Heroku apps.}
+  spec.summary       = %q{Configuration management for Heroku}
+  spec.homepage      = "https://github.com/rainforestapp/heroku.json"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
