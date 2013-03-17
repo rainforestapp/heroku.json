@@ -2,6 +2,9 @@ require 'heroku/command/run'
 require 'exporter'
 require 'importer'
 
+$LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), '../../../vendor/json_pure/lib'))
+require 'json/pure'
+
 # invoke commands without fucking "run"
 class Heroku::Command::Json < Heroku::Command::Run
 

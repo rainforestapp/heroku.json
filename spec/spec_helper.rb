@@ -1,5 +1,4 @@
 require 'heroku'
-require 'json'
 require 'ostruct'
 
 require 'heroku.json/constants'
