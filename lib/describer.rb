@@ -17,7 +17,7 @@ class Describer < Struct.new(:api, :app)
 
     body_or_die(api.get_config_vars(app)).each do |key, value|
       # Skip if it's blacklisted
-      next if HerokuJson::ENV_BLACKLIST.include?(key)
+      next if Array(HerokuJson::ENV_BLACKLIST).map{ |re| Regexp.new(re).match(key) }.compact.first
 
       env[key] = value
     end
