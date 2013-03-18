@@ -1,0 +1,8 @@
+{
+  "addons": [
+    "redistogo:nano"
+  ],
+  "env": {
+    "TEST": "testing"
+  }
+}

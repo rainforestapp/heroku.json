@@ -1,8 +1,9 @@
 $LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), '../../../vendor/json_pure/lib'))
-require 'heroku.json/api_helper'
+require 'herokujson/api_helper'
 require 'heroku/command/run'
-require 'heroku.json/describer'
-require 'heroku.json/bootstrapper'
+require 'herokujson/describer'
+require 'herokujson/bootstrapper'
+require 'json/pure'
 
 # invoke commands without fucking "run"
 class Heroku::Command::Json < Heroku::Command::Run

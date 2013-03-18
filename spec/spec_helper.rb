@@ -1,8 +1,8 @@
 require 'heroku'
 require 'ostruct'
 
-require 'heroku.json/constants'
-require 'heroku.json/version'
+require 'herokujson/constants'
+require 'herokujson/version'
 require 'heroku/command/json'
 
 $LOAD_PATH << File.join(File.dirname(__FILE__), '..', 'lib')
