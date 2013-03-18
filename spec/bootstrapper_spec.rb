@@ -5,7 +5,8 @@ describe Bootstrapper do
   let(:app) { 'foo' }
   let(:sample_json) { {'addons' => ['addon1', 'addon2'], 'env' => {'ENV1' => '1', 'ENV2' => 2}} }
   let(:bootstrapper) { Bootstrapper.new(api, app, sample_json) }
-  let(:api) { stub(:post_addon => true, :put_config_vars => true) }
+  let(:response) { OpenStruct.new(:status => 200, :body => [])}
+  let(:api) { stub(:post_addon => response, :put_config_vars => response, :get_addons => response) }
 
   describe "#bootstrap" do
     it "install all addons" do

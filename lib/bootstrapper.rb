@@ -2,16 +2,14 @@ class Bootstrapper < Struct.new(:api, :app, :json)
   include HerokuJson::ApiHelper
 
   def bootstrap
-    # create_app_if_not_exists
+    self.app = create_app if app.nil?
     add_addons
     add_config_vars
-    # push_code
-    # run_custom_commands
   end
 
   private
 
-  def create_app_if_not_exists
+  def create_app
 
   end
 
@@ -34,13 +32,5 @@ class Bootstrapper < Struct.new(:api, :app, :json)
     Heroku::Helpers.action "Deploying environment configs" do
       api.put_config_vars(app, json['env'])
     end
-  end
-
-  def push_code
-
-  end
-
-  def run_custom_commands
-
   end
 end

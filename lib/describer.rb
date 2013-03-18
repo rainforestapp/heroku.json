@@ -13,11 +13,13 @@ class Describer < Struct.new(:api, :app)
   def app_environment_variables
     env = {}
 
-    body_or_die(api.get_config_vars(app)).each do |key, value|
-      # Skip if it's blacklisted
-      next if HerokuJson::ENV_BLACKLIST.include?(key)
+    Heroku::Helpers.action "Getting environment variables #{app}" do
+      body_or_die(api.get_config_vars(app)).each do |key, value|
+        # Skip if it's blacklisted
+        next if Array(HerokuJson::ENV_BLACKLIST).map { |re| Regexp.new(re).match(key) }.compact.first
 
-      env[key] = value
+        env[key] = value
+      end
     end
 
     env

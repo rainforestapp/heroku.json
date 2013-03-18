@@ -31,5 +31,15 @@ describe Bootstrapper do
       api.should_receive(:put_config_vars).with(app, sample_json['env'])
       bootstrapper.bootstrap
     end
+
+    context "without an app" do
+      let(:app) { nil }
+      
+      it "should setup the app" do
+        bootstrapper.stub(:create_app => 'bar')
+        bootstrapper.bootstrap
+        bootstrapper.app.should == 'bar'
+      end
+    end
   end
 end
