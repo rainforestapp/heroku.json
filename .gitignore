@@ -18,3 +18,5 @@ test/version_tmp
 tmp
 tags
 heroku.json
+.sass-cache
+public/
