@@ -39,7 +39,7 @@ _Note: Although we blacklist some environment variables for you already, please 
 
 ## Contributors
 
-__heroku.json__ is a Rainforest hack day project, created by [smathieu](https://github.com/smathieu), [fredsterss](https://github.com/fredsterss) and [ukd1](https://github.com/ukd1).
+__heroku.json__ is a [Rainforest](https://www.rainforestqa.com/) interview hack day project, created by [smathieu](https://github.com/smathieu), [fredsterss](https://github.com/fredsterss) and [ukd1](https://github.com/ukd1). [We're hiring](mailto:hello@rainforestqa.com?subject=I want ur jobz)!
 
 ## Contributing
 
