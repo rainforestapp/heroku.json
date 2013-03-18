@@ -2,9 +2,9 @@
 
 heroku.json is configuration management for Heroku, making it super simple to setup (```heroku bootstrap```) and copy (```heroku describe```) Heroku apps.
 
-__For app creators:__ Include a heroku.json file in your project root to make running your app a one-liner
+__For app creators:__ Include a heroku.json file in your project root to make running your app on Heroku as simple as ```heroku bootstrap```.
 
-__For hackers:__ Setup any project with a heroku.json file with a single line of code
+__For hackers:__ Setup any project with a heroku.json file with a single command.
 
 ## Installation
 
@@ -16,7 +16,7 @@ __For hackers:__ Setup any project with a heroku.json file with a single line of
 
 ### Heroku bootstrap
 
-```heroku bootstrap``` creates an app on Heroku which is ready to run. After cloning a project with a __heroku.json__ file, you can run ```heroku bootstrap``` from the project root to install it onto Heroku. ```heroku bootstrap``` creates a new app on Heroku, installs the necessary addons, and configures the environment variables. Tada! One app, ready to go.
+```heroku bootstrap``` __creates an app__ on Heroku which is ready to run, based on a __heroku.json__ file. After cloning a project with a heroku.json file, you can run ```heroku bootstrap``` from the project root to install it onto Heroku. ```heroku bootstrap``` creates a new app on Heroku, installs the necessary addons, and configures the environment variables. Tada! One app, ready to go.
 
 _Note: Some addons are charged, please refer to the [addons](https://addons.heroku.com/) website for pricing information._
 
