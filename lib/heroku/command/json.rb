@@ -1,9 +1,10 @@
 require 'heroku/command/run'
+
+$LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), '../../../vendor/json_pure/lib'))
+$LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), '../..'))
 require 'heroku.json/api_helper'
 require 'describer'
 require 'bootstrapper'
-
-$LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), '../../../vendor/json_pure/lib'))
 require 'json/pure'
 
 # invoke commands without fucking "run"
