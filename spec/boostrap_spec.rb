@@ -7,6 +7,7 @@ describe "#bootstrap" do
   let(:command) { Heroku::Command::Json.new }
 
   it "bootstrap stuff" do
+    ENV.delete 'HEROKU_APP'
     command.bootstrap
   end
 end

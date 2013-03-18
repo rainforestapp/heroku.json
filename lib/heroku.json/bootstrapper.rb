@@ -1,13 +1,11 @@
 module HerokuJson
-  class Bootstrapper < Struct.new(:api, :app, :json)
+  class Bootstrapper < Struct.new(:api, :app, :json, :create_app_func)
     include Heroku::Helpers
 
     def bootstrap
-      # create_app_if_not_exists
+      self.app = create_app_func.call if app.nil?
       add_addons
       add_config_vars
-      # push_code
-      # run_custom_commands
     end
 
     private

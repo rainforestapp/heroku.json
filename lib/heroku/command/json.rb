@@ -1,9 +1,10 @@
+
+
+$LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), '../../../vendor/json_pure/lib'))
+require 'heroku.json/api_helper'
 require 'heroku/command/run'
 require 'heroku.json/describer'
 require 'heroku.json/bootstrapper'
-
-$LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), '../../../vendor/json_pure/lib'))
-require 'json/pure'
 
 # invoke commands without fucking "run"
 class Heroku::Command::Json < Heroku::Command::Run
@@ -18,7 +19,7 @@ class Heroku::Command::Json < Heroku::Command::Run
     display_table(json['addons'], json['addons'], ['Addons'])
 
     if confirm_billing
-      bootstrapper = HerokuJson::Bootstrapper.new(api, app, json)
+      bootstrapper = HerokuJson::Bootstrapper.new(api, safe_app, json, lambda { create_app })
       bootstrapper.bootstrap
     end
   end
@@ -33,6 +34,27 @@ class Heroku::Command::Json < Heroku::Command::Run
   end
 
   alias_command 'describe', 'json:describe'
+
+  private
+  def safe_app
+    begin
+      app
+    rescue Heroku::Command::CommandFailed
+      nil
+    end
+  end
+
+  def create_app
+    require 'heroku/command/apps'
+
+    name    = shift_argument || options[:app] || ENV['HEROKU_APP']
+    validate_arguments!
+
+    Heroku::Command.prepare_run name.nil? ? "create" : "create #{name}"
+    cmd = Heroku::Command::Apps.new
+    cmd.create
+    cmd.app
+  end
 
 end
 
