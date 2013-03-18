@@ -9,22 +9,20 @@ require 'json/pure'
 class Heroku::Command::Json < Heroku::Command::Run
 
   def bootstrap
-    Heroku::Helpers.action "Bootstrapping using heroku.json" do
+    Heroku::Helpers.display_header("Bootstrapping using heroku.json")
     json = File.read('heroku.json')
     json = JSON.parse(json)
     bootstrapper = Bootstrapper.new(api, app, json)
     bootstrapper.bootstrap
-    end
   end
 
   alias_command 'bootstrap', 'json:bootstrap'
 
   def describe
-    Heroku::Helpers.action "Describing #{app} to heroku.json" do
-      describer = Describer.new(api, app)
-      json = describer.describe
-      File.write('heroku.json', JSON.pretty_generate(json))
-    end
+    Heroku::Helpers.display_header("Describing #{app} to heroku.json")
+    describer = Describer.new(api, app)
+    json = describer.describe
+    File.write('heroku.json', JSON.pretty_generate(json))
   end
 
   alias_command 'describe', 'json:describe'
