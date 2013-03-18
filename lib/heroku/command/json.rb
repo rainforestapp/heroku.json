@@ -14,6 +14,7 @@ class Heroku::Command::Json < Heroku::Command::Base
     json = File.read('heroku.json')
     json = JSON.parse(json)
     bootstrapper = Bootstrapper.new(api, safe_app, json)
+    Heroku::Helpers.confirm_billing
     bootstrapper.bootstrap
   end
 
