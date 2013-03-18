@@ -9,11 +9,11 @@ __For hackers:__ Setup any project with a heroku.json file with a single line of
 ## Installation
 
 ### Get a Heroku account
-If you don't have one already, create an account with (Heroku)[https://api.heroku.com/signup]. Your account needs to be (verified)[https://dashboard.heroku.com/account] in order to use any apps, which means adding a credit card.
+If you don't have one already, create an account with [Heroku](https://api.heroku.com/signup). Your account needs to be [verified](https://dashboard.heroku.com/account) in order to use any apps, which means adding a credit card.
 
 ### Install Heroku Toolbelt
 
-Install (Heroku Toolbelt)[https://toolbelt.heroku.com/].
+Install [Heroku Toolbelt](https://toolbelt.heroku.com/).
 
 ### Install Heroku.json plugin
 
@@ -33,7 +33,7 @@ If you've cloned a project which has a heroku.json file just run:
 
 All the addons required will be installed as well as the environment config!
 
-Note: Some addons are charged, please refer to the (addons)[https://addons.heroku.com/] website for pricing information.
+Note: Some addons are charged, please refer to the [addons](https://addons.heroku.com/) website for pricing information.
 
 ### Making a heroku.json file for your project
 Just run:
