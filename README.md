@@ -10,26 +10,19 @@ __For hackers:__ Setup any project with a heroku.json file with a single line of
 
 1. Get a Heroku account. If you don't have one already, create an account with [Heroku](https://api.heroku.com/signup). Your account needs to be [verified](https://dashboard.heroku.com/account) in order to use any apps, which means adding a credit card.
 2. Install [Heroku Toolbelt](https://toolbelt.heroku.com/).
-3. Install the Heroku.json plugin, by running ```heroku plugins:install git@github.com:rainforestapp/heroku.json.git``` from the command line
+3. __Install heroku.json__, by running ```heroku plugins:install git@github.com:rainforestapp/heroku.json.git``` from the command line
 
 ## Basic Usage
 
 ### Bootstrapping a project
 
-If you've cloned a project which has a heroku.json file just run:
+After cloning a project with a __heroku.json__ file, you can run ```heroku bootstrap``` from the project root to install it onto Heroku. ```heroku bootstrap``` creates a new app on Heroku, installs the necessary addons, and configures the environment variables. Tada! One app, ready to go.
 
-```heroku bootstrap```
+_Note: Some addons are charged, please refer to the [addons](https://addons.heroku.com/) website for pricing information._
 
-All the addons required will be installed as well as the environment config!
+### Generating a heroku.json file for your project
 
-Note: Some addons are charged, please refer to the [addons](https://addons.heroku.com/) website for pricing information.
-
-### Making a heroku.json file for your project
-Just run:
-
-```heroku describe```
-
-This will create a new file called heroku.json in your project folder, it should look something like this:
+Simply run ```heroku describe``` to automatically generate a heroku.json file for your project. This will create a new file called heroku.json in your project folder which describes all of the addons and environment variables that your app depends on, and which looks something like this:
 
 ```json
 {
@@ -42,7 +35,7 @@ This will create a new file called heroku.json in your project folder, it should
 }
 ```
 
-Although we blacklist some environment variables for you already, please check that nothing private is exported before publishing.
+_Note: Although we blacklist some environment variables for you already, please check that nothing private is exported before publishing._
 
 ## Contributing
 
