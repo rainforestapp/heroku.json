@@ -8,20 +8,9 @@ __For hackers:__ Setup any project with a heroku.json file with a single line of
 
 ## Installation
 
-### Get a Heroku account
-If you don't have one already, create an account with [Heroku](https://api.heroku.com/signup). Your account needs to be [verified](https://dashboard.heroku.com/account) in order to use any apps, which means adding a credit card.
-
-### Install Heroku Toolbelt
-
-Install [Heroku Toolbelt](https://toolbelt.heroku.com/).
-
-### Install Heroku.json plugin
-
-Run:
-
-```heroku plugins:install git@github.com:rainforestapp/heroku.json.git```
-
-
+1. Get a Heroku account. If you don't have one already, create an account with [Heroku](https://api.heroku.com/signup). Your account needs to be [verified](https://dashboard.heroku.com/account) in order to use any apps, which means adding a credit card.
+2. Install [Heroku Toolbelt](https://toolbelt.heroku.com/).
+3. Install the Heroku.json plugin, by running ```heroku plugins:install git@github.com:rainforestapp/heroku.json.git``` from the command line
 
 ## Basic Usage
 
