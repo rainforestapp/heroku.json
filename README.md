@@ -47,6 +47,7 @@ __heroku.json__ is a [Rainforest](https://www.rainforestqa.com/) interview hack 
 - Push code to heroku automatically
 - Allow users to run arbitrary commands to allow users to bootstrap the db, generate static files, etc
 - Display pricing information about the addons installed
+- Setup collaborators automaticallyu
 
 ## Contributing
 
