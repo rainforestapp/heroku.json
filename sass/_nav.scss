@@ -4,12 +4,20 @@ nav {
     @include adjust-font-size-to(26px, 3);
     text-align: center;
     position: absolute;
-    right:0em; bottom: 2em; left: 0em;
+    right:0em; bottom: 3em; left: 0em;
     @include container;
 
     > div {
         @include span-columns(8,12);
         @include prefix(2);
+    }
+
+    h2 {
+        @include adjust-font-size-to(28px, 1.5, 26px);
+        color: $base00;
+        font-weight: bold;
+        position: relative;
+        margin-bottom: 1.5em;
     }
 
     a {
@@ -23,7 +31,7 @@ nav {
         @include box-sizing('border-box');
 
         &:hover {
-            background-color: $red;
+            background-color: $cyan;
             color: $base03;
         }
         &:first-of-type { border-right: 10px solid $base03; }

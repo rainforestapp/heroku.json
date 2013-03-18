@@ -17,4 +17,5 @@ body, html {
 section {
     @include container;
     height: 100%;
+    @include box-sizing('border-box');
 }

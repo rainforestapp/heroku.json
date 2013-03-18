@@ -122,6 +122,9 @@ section {
   margin-left: auto;
   margin-right: auto;
   height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 /* line 38, ../../../../../../fred.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 section:after {
@@ -151,19 +154,6 @@ header h1 {
   position: relative;
   top: -1em;
 }
-/* line 18, ../sass/_hero.scss */
-header h2 {
-  width: 66.10169%;
-  float: left;
-  margin-right: 1.69492%;
-  display: inline;
-  padding-left: 16.94915%;
-  font-size: 2.15385em;
-  line-height: 1.28571em;
-  color: #657b83;
-  font-weight: bold;
-  position: relative;
-}
 
 /* line 1, ../sass/_nav.scss */
 nav {
@@ -175,7 +165,7 @@ nav {
   text-align: center;
   position: absolute;
   right: 0em;
-  bottom: 2em;
+  bottom: 3em;
   left: 0em;
   *zoom: 1;
   padding-left: 1em;
@@ -198,6 +188,15 @@ nav > div {
   padding-left: 16.94915%;
 }
 /* line 15, ../sass/_nav.scss */
+nav h2 {
+  font-size: 1.07692em;
+  line-height: 1.28571em;
+  color: #657b83;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 1.5em;
+}
+/* line 23, ../sass/_nav.scss */
 nav a {
   -webkit-transition-duration: 250ms;
   -moz-transition-duration: 250ms;
@@ -213,18 +212,40 @@ nav a {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 25, ../sass/_nav.scss */
+/* line 33, ../sass/_nav.scss */
 nav a:hover {
-  background-color: #dc322f;
+  background-color: #2aa198;
   color: #002b36;
 }
-/* line 29, ../sass/_nav.scss */
+/* line 37, ../sass/_nav.scss */
 nav a:first-of-type {
   border-right: 10px solid #002b36;
 }
-/* line 30, ../sass/_nav.scss */
+/* line 38, ../sass/_nav.scss */
 nav a:last-of-type {
   border-left: 10px solid #002b36;
+}
+
+/* line 1, ../sass/_footer.scss */
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #073642;
+  text-align: center;
+  color: #657b83;
+}
+/* line 8, ../sass/_footer.scss */
+footer a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+/* line 13, ../sass/_footer.scss */
+footer a:hover {
+  color: #2aa198;
+  text-decoration: underline;
 }
 
 /* Import webfont */
