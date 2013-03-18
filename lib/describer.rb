@@ -30,7 +30,7 @@ class Describer < Struct.new(:api, :app)
   end
 
   def body_or_die res
-    raise "Fail getting env : #{res.status}" unless res.status == 200
+    Heroku::Helpers.error("API request to Heroku failed with status #{res.status}. Aborted.") unless res.status == 200
     res.body
   end
 end
