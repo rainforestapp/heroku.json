@@ -16,13 +16,13 @@ __For hackers:__ Setup any project with a heroku.json file with a single line of
 
 ### Heroku bootstrap
 
-Heroku bootstrap creates an app on Heroku which is ready to run. After cloning a project with a __heroku.json__ file, you can run ```heroku bootstrap``` from the project root to install it onto Heroku. ```heroku bootstrap``` creates a new app on Heroku, installs the necessary addons, and configures the environment variables. Tada! One app, ready to go.
+```heroku bootstrap``` creates an app on Heroku which is ready to run. After cloning a project with a __heroku.json__ file, you can run ```heroku bootstrap``` from the project root to install it onto Heroku. ```heroku bootstrap``` creates a new app on Heroku, installs the necessary addons, and configures the environment variables. Tada! One app, ready to go.
 
 _Note: Some addons are charged, please refer to the [addons](https://addons.heroku.com/) website for pricing information._
 
 ### Heroku describe
 
-Heroku describe generates a heroku.json file for your project. Simply run ```heroku describe``` to automatically generate a heroku.json file for your project. This will create a new file called heroku.json in your project folder which describes all of the addons and environment variables that your app depends on, and which looks something like this:
+```heroku describe``` generates a heroku.json file for your project. Simply run ```heroku describe``` to automatically generate a heroku.json file for your project. This will create a new file called heroku.json in your project folder which describes all of the addons and environment variables that your app depends on, and which looks something like this:
 
 ```json
 {
