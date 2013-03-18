@@ -1,6 +1,6 @@
 # Heroku.json
 
-heroku.json is configuration management for Heroku, making it super simple to setup (import) and copy (export) Heroku apps. The hardest part about hacking on Open Source projects tends to be getting a working version running. heroku.json makes it easy!
+heroku.json is configuration management for Heroku, making it super simple to setup (```heroku bootstrap```) and copy (```heroku describe```) Heroku apps.
 
 __For app creators:__ Include a heroku.json file in your project root to make running your app a one-liner
 
@@ -10,7 +10,7 @@ __For hackers:__ Setup any project with a heroku.json file with a single line of
 
 1. Get a Heroku account. If you don't have one already, create an account with [Heroku](https://api.heroku.com/signup). Your account needs to be [verified](https://dashboard.heroku.com/account) in order to use any apps, which means adding a credit card.
 2. Install [Heroku Toolbelt](https://toolbelt.heroku.com/).
-3. __Install heroku.json__, by running ```heroku plugins:install git@github.com:rainforestapp/heroku.json.git``` from the command line
+3. __Install heroku.json__, by running ```heroku plugins:install git@github.com:rainforestapp/heroku.json.git``` from the command line.
 
 ## Basic Usage
 
