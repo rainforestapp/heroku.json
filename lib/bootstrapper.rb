@@ -10,7 +10,11 @@ class Bootstrapper < Struct.new(:api, :app, :json)
   private
 
   def create_app
-
+    require 'heroku/command/apps'
+    Heroku::Command.prepare_run 'create'
+    cmd = Heroku::Command::Apps.new
+    cmd.create
+    cmd.app
   end
 
   def add_addons
