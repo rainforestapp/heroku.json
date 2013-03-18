@@ -13,7 +13,7 @@ class Heroku::Command::Json < Heroku::Command::Run
     json = File.read('heroku.json')
     json = JSON.parse(json)
     bootstrapper = Bootstrapper.new(api, app, json)
-    Heroku::Helpers.confirm("This will cost you money by installing #{Heroku::Helpers.quantify('addons', json['addons'].count)}")
+    Heroku::Helpers.confirm_billing
     bootstrapper.bootstrap
   end
 
