@@ -7,7 +7,7 @@ $LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), '../../../
 require 'json/pure'
 
 # invoke commands without fucking "run"
-class Heroku::Command::Json < Heroku::Command::Run
+class Heroku::Command::Json < Heroku::Command::Base
 
   def bootstrap
     Heroku::Helpers.display_header("Bootstrapping using heroku.json")
