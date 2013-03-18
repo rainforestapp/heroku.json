@@ -23,10 +23,10 @@ class Bootstrapper < Struct.new(:api, :app, :json)
       name, size = addon.split(':')
       next if installed_addons.include?(name)
       Heroku::Helpers.action "Installing addon #{addon}" do
-        begin 
+        begin
           api.post_addon(app, addon)
         rescue Heroku::API::Errors::RequestFailed => e
-          Heroku::Helpers.display "Addon #{addon} is already installed"
+          Heroku::Helpers.status("already installed")
         end
       end
     end
