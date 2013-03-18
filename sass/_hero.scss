@@ -1,8 +1,8 @@
 header {
 
+    @include span-columns(12, 12);
     position: relative;
     top: 50%;
-    // margin-top: -5em;
     text-align: center;
 
     /* Main heading */

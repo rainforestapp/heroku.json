@@ -132,6 +132,10 @@ section:after {
 
 /* line 1, ../sass/_hero.scss */
 header {
+  width: 100%;
+  float: left;
+  margin-right: 1.69492%;
+  display: inline;
   position: relative;
   top: 50%;
   text-align: center;
@@ -163,18 +167,37 @@ header h2 {
 
 /* line 1, ../sass/_nav.scss */
 nav {
-  width: 49.15254%;
-  float: left;
-  margin-right: 1.69492%;
-  display: inline;
-  margin-left: 25.42373%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   font-size: 2em;
   line-height: 2.76923em;
   text-align: center;
   position: absolute;
+  right: 0em;
   bottom: 2em;
+  left: 0em;
+  *zoom: 1;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 38, ../../../../../../fred.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+nav:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 /* line 10, ../sass/_nav.scss */
+nav > div {
+  width: 66.10169%;
+  float: left;
+  margin-right: 1.69492%;
+  display: inline;
+  padding-left: 16.94915%;
+}
+/* line 15, ../sass/_nav.scss */
 nav a {
   -webkit-transition-duration: 250ms;
   -moz-transition-duration: 250ms;
@@ -190,16 +213,16 @@ nav a {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 20, ../sass/_nav.scss */
+/* line 25, ../sass/_nav.scss */
 nav a:hover {
   background-color: #dc322f;
   color: #002b36;
 }
-/* line 24, ../sass/_nav.scss */
+/* line 29, ../sass/_nav.scss */
 nav a:first-of-type {
   border-right: 10px solid #002b36;
 }
-/* line 25, ../sass/_nav.scss */
+/* line 30, ../sass/_nav.scss */
 nav a:last-of-type {
   border-left: 10px solid #002b36;
 }
