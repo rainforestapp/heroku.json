@@ -9,17 +9,21 @@ class Describer < Struct.new(:api, :app)
   private
 
   def app_addons
-    body_or_die(api.get_addons(app)).map { |h| h['name'] }
+    Heroku::Helpers.action "Getting addons for #{app}" do
+      body_or_die(api.get_addons(app)).map { |h| h['name'] }
+    end
   end
 
   def app_environment_variables
     env = {}
 
-    body_or_die(api.get_config_vars(app)).each do |key, value|
-      # Skip if it's blacklisted
-      next if Array(HerokuJson::ENV_BLACKLIST).map{ |re| Regexp.new(re).match(key) }.compact.first
+    Heroku::Helpers.action "Getting environment variables #{app}" do
+      body_or_die(api.get_config_vars(app)).each do |key, value|
+        # Skip if it's blacklisted
+        next if Array(HerokuJson::ENV_BLACKLIST).map { |re| Regexp.new(re).match(key) }.compact.first
 
-      env[key] = value
+        env[key] = value
+      end
     end
 
     env
