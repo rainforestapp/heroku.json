@@ -17,7 +17,6 @@ test/tmp
 test/version_tmp
 tmp
 tags
-heroku.json
 .sass-cache
 public/
 .DS_Store
