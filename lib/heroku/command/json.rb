@@ -1,7 +1,6 @@
 require 'heroku/command/run'
 
 $LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), '../../../vendor/json_pure/lib'))
-$LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), '../..'))
 require 'heroku.json/api_helper'
 require 'describer'
 require 'bootstrapper'
@@ -14,8 +13,8 @@ class Heroku::Command::Json < Heroku::Command::Base
     Heroku::Helpers.display_header("Bootstrapping using heroku.json")
     json = File.read('heroku.json')
     json = JSON.parse(json)
-    bootstrapper = Bootstrapper.new(api, safe_app, json)
-    Heroku::Helpers.confirm_billing
+    bootstrapper = Bootstrapper.new(api, safe_app, json, lambda { create_app })
+    #Heroku::Helpers.confirm_billing
     bootstrapper.bootstrap
   end
 
@@ -37,6 +36,18 @@ class Heroku::Command::Json < Heroku::Command::Base
     rescue Heroku::Command::CommandFailed
       nil
     end
+  end
+
+  def create_app
+    require 'heroku/command/apps'
+
+    name    = shift_argument || options[:app] || ENV['HEROKU_APP']
+    validate_arguments!
+    
+    Heroku::Command.prepare_run name.nil? ? "create" : "create #{name}"
+    cmd = Heroku::Command::Apps.new
+    cmd.create
+    cmd.app
   end
 
 end

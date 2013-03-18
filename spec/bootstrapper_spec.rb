@@ -4,7 +4,7 @@ require 'heroku-api'
 describe Bootstrapper do
   let(:app) { 'foo' }
   let(:sample_json) { {'addons' => ['addon1:small', 'addon2:nano'], 'env' => {'ENV1' => '1', 'ENV2' => 2}} }
-  let(:bootstrapper) { Bootstrapper.new(api, app, sample_json) }
+  let(:bootstrapper) { Bootstrapper.new(api, app, sample_json, lambda {'bar'}) }
   let(:response) { OpenStruct.new(:status => 200, :body => [])}
   let(:api) { stub(:post_addon => response, :put_config_vars => response, :get_addons => response) }
 
@@ -36,7 +36,6 @@ describe Bootstrapper do
       let(:app) { nil }
       
       it "should setup the app" do
-        bootstrapper.stub(:create_app => 'bar')
         bootstrapper.bootstrap
         bootstrapper.app.should == 'bar'
       end

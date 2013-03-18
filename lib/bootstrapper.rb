@@ -1,25 +1,13 @@
-class Bootstrapper < Struct.new(:api, :app, :json)
+class Bootstrapper < Struct.new(:api, :app, :json, :create_app_func)
   include HerokuJson::ApiHelper
 
   def bootstrap
-    self.app = create_app if app.nil?
+    self.app = create_app_func.call if app.nil?
     add_addons
     add_config_vars
   end
 
   private
-
-  def create_app
-    require 'heroku/command/apps'
-
-    name    = shift_argument || options[:app] || ENV['HEROKU_APP']
-    validate_arguments!
-    
-    Heroku::Command.prepare_run "create #{name}"
-    cmd = Heroku::Command::Apps.new
-    cmd.create
-    cmd.app
-  end
 
   def add_addons
     installed_addons = app_addons.map {|a| a.split(':').first }
