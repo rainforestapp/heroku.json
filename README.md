@@ -4,7 +4,7 @@ heroku.json is configuration management for Heroku, making it super simple to se
 
 __For app creators:__ Include a heroku.json file in your project root to make running your app on Heroku as simple as ```heroku bootstrap```.
 
-__For hackers:__ Setup any project with a heroku.json file with a single command.
+__For hackers:__ Configure and run any app with a heroku.json file on Heroku using a single command.
 
 ## Installation
 
