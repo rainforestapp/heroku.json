@@ -20,5 +20,6 @@ RSpec.configure do |config|
 
   config.before(:each) do
     Heroku::Helpers.stub(:display) { true }
+    Heroku::Helpers.stub(:confirm) { true }
   end
 end
