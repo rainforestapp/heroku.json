@@ -22,7 +22,7 @@ _Note: Some addons are charged, please refer to the [addons](https://addons.hero
 
 ### Heroku describe
 
-```heroku describe``` generates a heroku.json file for your project. Simply run ```heroku describe``` to automatically generate a heroku.json file for your project. This will create a new file called heroku.json in your project folder which describes all of the addons and environment variables that your app depends on, and which looks something like this:
+```heroku describe``` __generates a heroku.json file__ for your project. This will create a new file called heroku.json in your project folder which describes all of the addons and environment variables that your app depends on, and which looks something like this:
 
 ```json
 {
@@ -35,7 +35,11 @@ _Note: Some addons are charged, please refer to the [addons](https://addons.hero
 }
 ```
 
-_Note: Although we blacklist some environment variables for you already, please check that nothing private is exported before publishing._
+_Note: Although we blacklist some environment variables for you already, please check that nothing private/sensitive is exported before publishing._
+
+## Contributors
+
+__heroku.json__ is a Rainforest hack day project, created by [smathieu](https://github.com/smathieu), [fredsterss](https://github.com/fredsterss) and [ukd1](https://github.com/ukd1).
 
 ## Contributing
 
