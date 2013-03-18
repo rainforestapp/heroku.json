@@ -41,6 +41,13 @@ _Note: Although we blacklist some environment variables for you already, please 
 
 __heroku.json__ is a [Rainforest](https://www.rainforestqa.com/) interview hack day project, created by [smathieu](https://github.com/smathieu), [fredsterss](https://github.com/fredsterss) and [ukd1](https://github.com/ukd1). [We're hiring](mailto:hello@rainforestqa.com?subject=I want ur jobz)!
 
+
+## TODO
+
+- Push code to heroku automatically
+- Allow users to run arbitrary commands to allow users to bootstrap the db, generate static files, etc
+- Display pricing information about the addons installed
+
 ## Contributing
 
 1. Fork it
