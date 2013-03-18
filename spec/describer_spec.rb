@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Exporter do
+describe Describer do
   let(:app) { 'my_app' }
   let(:sample_get_addons) {
     [
@@ -33,16 +33,16 @@ describe Exporter do
   end
 
   subject do
-    Exporter.new(api, app)
+    Describer.new(api, app)
   end
 
-  describe "#export" do
-    it "Exports the addons" do
-      json = subject.export
+  describe "#describe" do
+    it "Describes the addons" do
+      json = subject.describe
       json['addons'].should == ["scheduler:standard", "sendgrid:starter", "heroku-postgresql:dev"]
     end
-    it "Exports the environment variables" do
-      json = subject.export
+    it "Describes the environment variables" do
+      json = subject.describe
 
       json['env'].keys.should include('RACK_ENV')
       json['env'].keys.should include('RANDOM_VAR')

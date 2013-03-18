@@ -1,3 +1,0 @@
-describe "#import" do
-  
-end

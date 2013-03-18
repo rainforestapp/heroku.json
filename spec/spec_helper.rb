@@ -1,5 +1,4 @@
 require 'heroku'
-require 'json'
 require 'ostruct'
 
 require 'heroku.json/constants'
@@ -18,4 +17,8 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = 'random'
+
+  config.before(:each) do
+    Heroku::Helpers.stub(:display) { true }
+  end
 end
