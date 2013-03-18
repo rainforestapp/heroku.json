@@ -1,4 +1,6 @@
 class Bootstrapper < Struct.new(:api, :app, :json)
+  include Heroku::Helpers
+
   def bootstrap
     # create_app_if_not_exists
     add_addons
@@ -15,18 +17,18 @@ class Bootstrapper < Struct.new(:api, :app, :json)
 
   def add_addons
     json['addons'].each do |addon|
-      Heroku::Helpers.action "Installing addon #{addon}" do
+      action "Installing addon #{addon}" do
         begin
           api.post_addon(app, addon)
         rescue Heroku::API::Errors::RequestFailed => e
-          Heroku::Helpers.status("already installed")
+          status("already installed")
         end
       end
     end
   end
 
   def add_config_vars
-    Heroku::Helpers.action "Deploying environment configs" do
+    action "Deploying environment configs" do
       api.put_config_vars(app, json['env'])
     end
   end

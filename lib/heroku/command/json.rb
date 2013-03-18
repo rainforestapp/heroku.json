@@ -7,20 +7,26 @@ require 'json/pure'
 
 # invoke commands without fucking "run"
 class Heroku::Command::Json < Heroku::Command::Run
+  include Heroku::Helpers
 
   def bootstrap
-    Heroku::Helpers.display_header("Bootstrapping using heroku.json")
+    display_header("Bootstrapping using heroku.json")
     json = File.read('heroku.json')
     json = JSON.parse(json)
-    bootstrapper = Bootstrapper.new(api, app, json)
-    Heroku::Helpers.confirm_billing
-    bootstrapper.bootstrap
+
+    display
+    display_table(json['addons'], json['addons'], ['Addons'])
+
+    if confirm_billing
+      bootstrapper = Bootstrapper.new(api, app, json)
+      bootstrapper.bootstrap
+    end
   end
 
   alias_command 'bootstrap', 'json:bootstrap'
 
   def describe
-    Heroku::Helpers.display_header("Describing #{app} to heroku.json")
+    display_header("Describing #{app} to heroku.json")
     describer = Describer.new(api, app)
     json = describer.describe
     File.write('heroku.json', JSON.pretty_generate(json))

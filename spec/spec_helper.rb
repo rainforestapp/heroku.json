@@ -20,6 +20,9 @@ RSpec.configure do |config|
 
   config.before(:each) do
     Heroku::Helpers.stub(:display) { true }
-    Heroku::Helpers.stub(:confirm) { true }
+    Bootstrapper.any_instance.stub(:display) { true }
+    Describer.any_instance.stub(:display) { true }
+    Heroku::Command::Json.any_instance.stub(:display) { true }
+    Heroku::Command::Json.any_instance.stub(:confirm) { true }
   end
 end
