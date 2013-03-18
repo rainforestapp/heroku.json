@@ -1,5 +1,5 @@
-class Exporter < Struct.new(:api, :app)
-  def export
+class Describer < Struct.new(:api, :app)
+  def describe
     {
         'addons' => app_addons,
         'env' => app_environment_variables

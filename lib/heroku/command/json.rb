@@ -1,6 +1,6 @@
 require 'heroku/command/run'
-require 'exporter'
-require 'importer'
+require 'describer'
+require 'bootstrapper'
 
 $LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), '../../../vendor/json_pure/lib'))
 require 'json/pure'
@@ -8,22 +8,22 @@ require 'json/pure'
 # invoke commands without fucking "run"
 class Heroku::Command::Json < Heroku::Command::Run
 
-  def import
+  def bootstrap
     json = File.read('heroku.json')
     json = JSON.parse(json)
-    importer = Importer.new(api, app, json)
-    importer.import
+    bootstrapper = Bootstrapper.new(api, app, json)
+    bootstrapper.bootstrap
   end
 
-  alias_command 'import', 'json:import'
+  alias_command 'bootstrap', 'json:bootstrap'
 
-  def export
-    exporter = Exporter.new(api, app)
-    json = exporter.export
+  def describe
+    describer = Describer.new(api, app)
+    json = describer.describe
     File.write('heroku.json', JSON.pretty_generate(json))
   end
 
-  alias_command 'export', 'json:export'
+  alias_command 'describe', 'json:describe'
 
 end
 

@@ -1,5 +1,5 @@
-class Importer < Struct.new(:api, :app, :json)
-  def import
+class Bootstrapper < Struct.new(:api, :app, :json)
+  def bootstrap
     # create_app_if_not_exists
     add_addons
     add_config_vars
