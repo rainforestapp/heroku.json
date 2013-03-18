@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Describer do
+describe HerokuJson::Describer do
   let(:app) { 'my_app' }
   let(:sample_get_addons) {
     [
@@ -33,7 +33,7 @@ describe Describer do
   end
 
   subject do
-    Describer.new(api, app)
+    HerokuJson::Describer.new(api, app)
   end
 
   describe "#describe" do

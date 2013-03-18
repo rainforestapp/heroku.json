@@ -1,6 +1,6 @@
 require 'heroku/command/run'
-require 'describer'
-require 'bootstrapper'
+require 'heroku.json/describer'
+require 'heroku.json/bootstrapper'
 
 $LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), '../../../vendor/json_pure/lib'))
 require 'json/pure'
@@ -18,7 +18,7 @@ class Heroku::Command::Json < Heroku::Command::Run
     display_table(json['addons'], json['addons'], ['Addons'])
 
     if confirm_billing
-      bootstrapper = Bootstrapper.new(api, app, json)
+      bootstrapper = HerokuJson::Bootstrapper.new(api, app, json)
       bootstrapper.bootstrap
     end
   end
@@ -27,7 +27,7 @@ class Heroku::Command::Json < Heroku::Command::Run
 
   def describe
     display_header("Describing #{app} to heroku.json")
-    describer = Describer.new(api, app)
+    describer = HerokuJson::Describer.new(api, app)
     json = describer.describe
     File.write('heroku.json', JSON.pretty_generate(json))
   end

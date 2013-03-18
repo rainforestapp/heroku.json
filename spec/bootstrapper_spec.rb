@@ -1,10 +1,10 @@
 require 'spec_helper'
 require 'heroku-api'
 
-describe Bootstrapper do
+describe HerokuJson::Bootstrapper do
   let(:app) { 'foo' }
   let(:sample_json) { {'addons' => ['addon1', 'addon2'], 'env' => {'ENV1' => '1', 'ENV2' => 2}} }
-  let(:bootstrapper) { Bootstrapper.new(api, app, sample_json) }
+  let(:bootstrapper) { HerokuJson::Bootstrapper.new(api, app, sample_json) }
   let(:api) { stub(:post_addon => true, :put_config_vars => true) }
 
   describe "#bootstrap" do
