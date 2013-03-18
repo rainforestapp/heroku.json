@@ -1,5 +1,3 @@
-
-
 $LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), '../../../vendor/json_pure/lib'))
 require 'heroku.json/api_helper'
 require 'heroku/command/run'
