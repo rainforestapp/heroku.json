@@ -1,4 +1,5 @@
 require 'heroku/command/run'
+require 'heroku.json/api_helper'
 require 'describer'
 require 'bootstrapper'
 

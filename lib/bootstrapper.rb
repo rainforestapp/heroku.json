@@ -1,4 +1,6 @@
 class Bootstrapper < Struct.new(:api, :app, :json)
+  include HerokuJson::ApiHelper
+
   def bootstrap
     # create_app_if_not_exists
     add_addons
@@ -14,7 +16,10 @@ class Bootstrapper < Struct.new(:api, :app, :json)
   end
 
   def add_addons
+    installed_addons = app_addons.map {|a| a.split(':').first }
     json['addons'].each do |addon|
+      name, size = addon.split(':')
+      next if installed_addons.include?(name)
       Heroku::Helpers.action "Installing addon #{addon}" do
         begin 
           api.post_addon(app, addon)

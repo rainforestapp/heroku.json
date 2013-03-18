@@ -1,4 +1,6 @@
 class Describer < Struct.new(:api, :app)
+  include HerokuJson::ApiHelper
+
   def describe
     {
         'addons' => app_addons,
@@ -7,10 +9,6 @@ class Describer < Struct.new(:api, :app)
   end
 
   private
-
-  def app_addons
-    body_or_die(api.get_addons(app)).map { |h| h['name'] }
-  end
 
   def app_environment_variables
     env = {}
@@ -23,10 +21,5 @@ class Describer < Struct.new(:api, :app)
     end
 
     env
-  end
-
-  def body_or_die res
-    raise "Fail getting env : #{res.status}" unless res.status == 200
-    res.body
   end
 end
