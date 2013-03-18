@@ -29,7 +29,9 @@ class Heroku::Command::Json < Heroku::Command::Run
     display_header("Describing #{app} to heroku.json")
     describer = HerokuJson::Describer.new(api, app)
     json = describer.describe
-    File.write('heroku.json', JSON.pretty_generate(json))
+    File.open('heroku.json','w') do |f|
+      f.write(JSON.pretty_generate(json))
+    end
   end
 
   alias_command 'describe', 'json:describe'
