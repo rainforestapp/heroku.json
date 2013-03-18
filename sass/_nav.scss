@@ -1,0 +1,27 @@
+nav {
+
+    @include span-columns(6, 12);
+    @include pre(3);
+    @include adjust-font-size-to(26px, 3);
+    text-align: center;
+    position: absolute;
+    bottom: 2em;
+
+    a {
+        @include transition-duration(250ms);
+        display: inline-block;
+        width: 50%;
+        background-color: $base02;
+        color: $base01;
+        text-decoration: none;
+        font-weight: bold;
+        @include box-sizing('border-box');
+
+        &:hover {
+            background-color: $red;
+            color: $base03;
+        }
+        &:first-of-type { border-right: 10px solid $base03; }
+        &:last-of-type { border-left: 10px solid $base03; }
+    }
+}

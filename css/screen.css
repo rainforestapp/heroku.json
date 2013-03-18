@@ -114,46 +114,94 @@ body:after, html:after {
   clear: both;
 }
 
-/* line 1, ../sass/_hero.scss */
-header {
-  position: relative;
-  top: 50%;
-  margin-top: -5em;
-  text-align: center;
+/* line 17, ../sass/_main.scss */
+section {
   *zoom: 1;
   padding-left: 1em;
   padding-right: 1em;
   margin-left: auto;
   margin-right: auto;
-  /* Main heading */
+  height: 100%;
 }
 /* line 38, ../../../../../../fred.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
-header:after {
+section:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 10, ../sass/_hero.scss */
+
+/* line 1, ../sass/_hero.scss */
+header {
+  position: relative;
+  top: 50%;
+  text-align: center;
+  /* Main heading */
+}
+/* line 9, ../sass/_hero.scss */
 header h1 {
   font-size: 6.46154em;
   line-height: 0.28571em;
   color: #eee8d5;
   font-family: 'Cutive Mono', Helvetica, sans-serif;
   font-weight: bold;
+  position: relative;
+  top: -1em;
 }
-/* line 17, ../sass/_hero.scss */
+/* line 18, ../sass/_hero.scss */
 header h2 {
-  margin-top: 3em;
   width: 66.10169%;
   float: left;
   margin-right: 1.69492%;
   display: inline;
   padding-left: 16.94915%;
-  font-size: 1.84615em;
-  line-height: 1.5em;
+  font-size: 2.15385em;
+  line-height: 1.28571em;
   color: #657b83;
   font-weight: bold;
   position: relative;
+}
+
+/* line 1, ../sass/_nav.scss */
+nav {
+  width: 49.15254%;
+  float: left;
+  margin-right: 1.69492%;
+  display: inline;
+  margin-left: 25.42373%;
+  font-size: 2em;
+  line-height: 2.76923em;
+  text-align: center;
+  position: absolute;
+  bottom: 2em;
+}
+/* line 10, ../sass/_nav.scss */
+nav a {
+  -webkit-transition-duration: 250ms;
+  -moz-transition-duration: 250ms;
+  -o-transition-duration: 250ms;
+  transition-duration: 250ms;
+  display: inline-block;
+  width: 50%;
+  background-color: #073642;
+  color: #586e75;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 20, ../sass/_nav.scss */
+nav a:hover {
+  background-color: #dc322f;
+  color: #002b36;
+}
+/* line 24, ../sass/_nav.scss */
+nav a:first-of-type {
+  border-right: 10px solid #002b36;
+}
+/* line 25, ../sass/_nav.scss */
+nav a:last-of-type {
+  border-left: 10px solid #002b36;
 }
 
 /* Import webfont */
