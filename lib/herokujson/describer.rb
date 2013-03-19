@@ -29,20 +29,12 @@ module HerokuJson
         end
       end
 
-      ksort env
+      Hash[env.sort]
     end
 
     def body_or_die res
       error("API request to Heroku failed with status #{res.status}. Aborted.") unless res.status == 200
       res.body
-    end
-
-    def ksort h
-      out = {}
-      h.keys.sort.each do |k|
-        out[k] = h[k]
-      end
-      out
     end
   end
 end
