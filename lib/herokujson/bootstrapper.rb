@@ -3,9 +3,11 @@ module HerokuJson
   include HerokuJson::ApiHelper
 
   def bootstrap
+    run_scripts 'before_bootstrap'
     self.app = create_app_func.call if app.nil?
     add_addons
     add_config_vars
+    run_scripts 'after_bootstrap'
   end
 
   private
@@ -28,6 +30,16 @@ module HerokuJson
   def add_config_vars
     Heroku::Helpers.action "Deploying environment configs" do
       api.put_config_vars(app, json['env'])
+    end
+  end
+
+  def run_scripts(key)
+    if json[key].nil?
+      return
+    end
+
+    json[key].each do |script|
+      system script
     end
   end
 end
