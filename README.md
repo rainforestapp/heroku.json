@@ -1,3 +1,5 @@
+_**NOTE:** Whilst this possibly still works, you should use [app.json](https://blog.heroku.com/archives/2014/5/22/introducing_the_app_json_application_manifest) from Heroku - it's the offically supported, extended version of this_
+
 # Heroku.json
 
 heroku.json is configuration management for Heroku, making it super simple to setup (```heroku bootstrap```) and copy (```heroku describe```) Heroku apps.
